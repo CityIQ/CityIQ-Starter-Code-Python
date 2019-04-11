@@ -1,4 +1,4 @@
-# # Run $ python3 demo.py in your command line and see events within the last specified timeframe (see startTime and endTime)
+# Run $ python3 demo.py in your command line and see events within the last specified timeframe (see startTime and endTime)
 from cityiq import CityIq
 import time
 import json
