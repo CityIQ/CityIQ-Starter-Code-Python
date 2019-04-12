@@ -8,8 +8,8 @@ import json
 import websocket
 
 # # set the zone and websocket url
-zone = credentials.credentials["SD"]["parking"]
-wsURL = credentials.credentials['SD']["websocket"]
+zone = credentials.credentials["City"]["parking"]
+wsURL = credentials.credentials["City"]["websocket"]
 payload = '{"bbox": "33.077762:-117.663817,32.559574:-116.584410", "eventTypes":["PKIN","PKOUT"]}'
 
 def on_message(ws, message): 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     print("===========Starting================")
     print("Getting the token")
     # getting the token using cityiq.py
-    myCIQ = CityIq("SD")
+    myCIQ = CityIq("City")
     myCIQ.fetchToken()
     token = myCIQ.getToken()
     # setup the websocket

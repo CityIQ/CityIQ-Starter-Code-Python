@@ -11,7 +11,7 @@ print("=========================================================================
 print('initiating demo')
 
 print("Getting the token")
-myCIQ = CityIq("SD")
+myCIQ = CityIq("City")
 myCIQ.fetchToken()
 
 print("====================================================================================")
