@@ -42,7 +42,7 @@ class CityIq(object):
 
     # # gets the assets or locations by the input parameter filters
     # # path must be "assets" OR "locations" 
-    # # zone must be "parking", "traffic" "pedestrian" environment" - as seen in credentials.py 
+    # # zone must be "parking", "traffic" "pedestrian" environment" "bicycle" - as seen in credentials.py 
     # # filterQ is optional but recommended: 
     # #     filterQ is the payload associated to q= in the params.  This can be :
     # #     "eventTypes:PKIN","eventTypes:PKOUT","eventTypes:PEDEVT", etc...
@@ -105,8 +105,10 @@ class CityIq(object):
                 zone = self.tenant["traffic"]
             elif evType == 'PEDEVT':
                 zone = self.tenant["pedestrian"]
-            elif evType == 'TEMPERATURE' or evType == 'HUMIDITY' or evType == 'PRESSURE' :
+            elif evType == 'TEMPERATURE' or evType == 'PRESSURE' :
                 zone = self.tenant["environment"]
+            elif evType == 'BICYCLE':
+                zone = self.tenant["bicycle"]
             else :
                 print("Invalid event type")
                 return 

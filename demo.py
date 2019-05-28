@@ -86,9 +86,9 @@ print("=========================================================================
 print("++++++++++Getting Environmental Data++++++++++++")
 
 print("Getting Environmental Metadata")
-# gettting assets - assets with Humidity events, page 0 with 10 assets per page
+# gettting assets - assets with Temperature events, page 0 with 10 assets per page
 print("Getting Assets")
-myCIQ.fetchMetadata("assets","environment","eventTypes:HUMIDITY",page=0, size=10)
+myCIQ.fetchMetadata("assets","environment","eventTypes:TEMPERATURE",page=0, size=10)
 assets = myCIQ.getAssets()
 # set a random asset in the list for future use
 randAssetUid = assets[0]["assetUid"]
@@ -96,7 +96,26 @@ randAssetUid = assets[0]["assetUid"]
 print("-------------------------------------------")
 print("Get events for assetUid "+randAssetUid)
 # getting events
-myCIQ.fetchEvents("assets", randAssetUid, "HUMIDITY", startTime, endTime, pageSize=1)
+myCIQ.fetchEvents("assets", randAssetUid, "TEMPERATURE", startTime, endTime, pageSize=1)
+assetEvents = myCIQ.getEvents()
+# printing events
+print(json.dumps(assetEvents,indent=4,sort_keys=True))
+
+print("====================================================================================")
+print("++++++++++Getting Bicycle Data++++++++++++")
+
+print("Getting Bicycle Metadata")
+# gettting assets - assets with TFEVT events, page 0 with 10 assets per page
+print("Getting Assets")
+myCIQ.fetchMetadata("assets","bicycle","eventTypes:BICYCLE",page=0, size=10)
+assets = myCIQ.getAssets()
+# set a random asset in the list for future use
+randAssetUid = assets[0]["assetUid"]
+
+print("-------------------------------------------")
+print("Get events for assetUid "+randAssetUid)
+# getting events
+myCIQ.fetchEvents("assets", randAssetUid, "BICYCLE", startTime, endTime, pageSize=1)
 assetEvents = myCIQ.getEvents()
 # printing events
 print(json.dumps(assetEvents,indent=4,sort_keys=True))

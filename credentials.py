@@ -11,6 +11,7 @@ credentials = {
         "environment": "{yourEnvironmentPredixZoneID}",
         "pedestrian": "{yourPedestrianPredixZoneID}",
         "traffic": "{yourTrafficPredixZoneID}",
+        "bicycle": "{yourBicyclePredixZoneID}",
         "bbox": "{lat}:{long},{lat}:{long}"
     }
 }
